@@ -1,0 +1,32 @@
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+  ui = auto
+[alias]
+  ci = commit
+  st = status --short --branch
+  br = branch -r
+  b  = branch
+  co = checkout
+  c  = !git checkout $(git branch | peco | awk '{ print $NF }')
+  p  = push origin
+  pl = pull origin
+  pu = push upstream
+  plu = pull upstream
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[merge]
+  ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[diff]
+  colorMoved = zebra
